@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IHC Email Templates — Cold & Warm | OneKlinik</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #34b6f8;
+    --charcoal: #545454;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --meta-bg: #f0f4f8;
+    --border: #e2e8f0;
+    --text-primary: #1a202c;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Georgia', 'Times New Roman', serif;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+  }
+  body { font-family: var(--font-ui); background: var(--bg); min-height: 100vh; padding: 2rem 1rem 4rem; color: var(--text-primary); }
+  .page-wrap { max-width: 780px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon { width: 30px; height: 30px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 700; }
+  .logo-text { font-size: 19px; font-weight: 700; color: var(--charcoal); }
+  .logo-text span { color: var(--blue); }
+  .header-badge { background: #fff7ed; color: #633806; border: 1px solid #fac775; font-size: 11px; font-weight: 600; padding: 4px 13px; border-radius: 20px; }
+  .controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+  .ctrl-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .ctrl-label { font-size: 12px; color: var(--text-muted); min-width: 60px; }
+  .var-btn, .lang-btn { cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text-secondary); font-size: 13px; font-weight: 500; border-radius: 20px; padding: 6px 16px; transition: all 0.15s; font-family: var(--font-ui); }
+  .var-btn.active { background: #1a202c; color: white; border-color: #1a202c; }
+  .lang-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 2.5rem; font-size: 14.5px; line-height: 1.8; color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .badge-row { margin-bottom: 1.25rem; display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
+  .badge-cold { background: #eeedfe; color: #3c3489; border: 1px solid #afa9ec; }
+  .badge-warm { background: #fff7ed; color: #633806; border: 1px solid #fac775; }
+  .badge-email { background: #e8f7fe; color: #0c447c; border: 1px solid #b5d4f4; }
+  .meta-box { background: var(--meta-bg); border-radius: var(--radius-md); padding: 0.9rem 1.1rem; margin-bottom: 1.5rem; font-size: 12.5px; border: 1px solid var(--border); }
+  .meta-row { display: flex; gap: 8px; padding: 2.5px 0; }
+  .meta-lbl { min-width: 52px; color: var(--text-muted); font-size: 11.5px; padding-top: 1px; }
+  .meta-subject { color: var(--blue); font-weight: 600; }
+  .body-content p { margin: 0 0 0.9rem; font-family: var(--font-body); font-size: 14.5px; line-height: 1.8; }
+  .body-content ul { margin: 0.4rem 0 0.9rem 1.35rem; }
+  .body-content ul li { margin-bottom: 0.35rem; font-family: var(--font-body); font-size: 14.5px; }
+  .sig { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem; font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .sig .name { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-top: 4px; }
+  .sig .brand { color: var(--blue); font-weight: 600; }
+  .sig .contact { color: var(--text-muted); font-size: 12px; margin-top: 3px; }
+  .note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 1rem; }
+  @media (max-width: 580px) { .card { padding: 1.25rem 1rem; } }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="logo">
+      <div class="logo-icon">+</div>
+      <div class="logo-text">One<span>Klinik</span></div>
+    </div>
+    <span class="header-badge">IHC Email Templates — Cold & Warm</span>
+  </header>
+
+  <div class="controls">
+    <div class="ctrl-row">
+      <span class="ctrl-label">Tipe</span>
+      <button class="var-btn active" onclick="setVar('cold',this)">Cold Outreach</button>
+      <button class="var-btn" onclick="setVar('warm',this)">Post-Call Follow-Up</button>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label">Bahasa</span>
+      <button class="lang-btn active" onclick="setLang('id',this)">🇮🇩 Indonesia</button>
+      <button class="lang-btn" onclick="setLang('en',this)">🇬🇧 English</button>
+    </div>
+  </div>
+
+  <div id="tpl-wrap"></div>
+  <p class="note">* Teks dalam [kurung kotak] adalah placeholder yang perlu disesuaikan per lead. Pilih hook segmen yang relevan (hotel / apartemen / kantor) untuk versi cold.</p>
+</div>
+
+<script>
+let variant='cold', lang='id';
+
+const T = {
+  cold: {
+    id: {
+      subject: "Solusi Layanan Kesehatan On-Site untuk [Nama Perusahaan] — OneKlinik",
+      body: `<p>Dear Bapak/Ibu <strong>[Nama Kontak]</strong>,<br><strong>[Jabatan] — [Nama Perusahaan]</strong></p>
+<p>Perkenalkan, saya <strong>[Nama BD]</strong> dari <strong>OneKlinik</strong> — layanan kesehatan B2B yang menyediakan klinik permanen on-site untuk hotel, kantor, dan hunian premium di Jakarta.</p>
+<p>Saya menghubungi Bapak/Ibu karena <strong>[Nama Perusahaan]</strong> adalah <em>[hotel bintang 4/5 / gedung perkantoran / hunian premium]</em> yang tentunya memiliki kebutuhan layanan kesehatan bagi <em>[tamu / penghuni / karyawan]</em> — dan kami percaya kami bisa menjadi solusi yang tepat.</p>
+<p>OneKlinik menempatkan tim medis (dokter dan/atau perawat), peralatan, serta obat-obatan langsung di lokasi klien dengan model <strong>retainer bulanan</strong> yang disesuaikan. Saat ini kami sudah melayani enam lokasi aktif di Jakarta, termasuk hotel, kantor, dan apartemen premium.</p>
+<p>Yang kami tawarkan, antara lain:</p>
+<ul>
+<li>Penempatan tenaga medis sesuai kebutuhan (dokter dan/atau perawat)</li>
+<li>Obat-obatan yang bersumber dari klinik pratama kami di Sunter</li>
+<li>Rekam medis elektronik & laporan kunjungan bulanan</li>
+<li>Biaya retainer yang fleksibel, disesuaikan dengan skala dan kebutuhan operasional</li>
+</ul>
+<p>Kami melampirkan proposal singkat sebagai gambaran awal. Jika Bapak/Ibu tertarik untuk mengetahui lebih lanjut, kami sangat terbuka untuk berdiskusi singkat di waktu yang paling nyaman.</p>
+<p>Terima kasih atas perhatiannya.</p>`
+    },
+    en: {
+      subject: "On-Site Healthcare Solution for [Company Name] — OneKlinik",
+      body: `<p>Dear <strong>[Contact Name]</strong>,<br><strong>[Title] — [Company Name]</strong></p>
+<p>My name is <strong>[BD Name]</strong> from <strong>OneKlinik</strong> — a B2B healthcare service that provides permanent on-site clinics for hotels, offices, and premium residences in Jakarta.</p>
+<p>I'm reaching out because <strong>[Company Name]</strong> is a <em>[4/5-star hotel / office building / premium residence]</em> that likely has ongoing healthcare needs for its <em>[guests / residents / employees]</em> — and we believe we can be the right solution.</p>
+<p>OneKlinik places a dedicated medical team (doctor and/or nurse), equipment, and medications directly at the client's premises through a flexible <strong>monthly retainer</strong> model. We currently serve six active locations across Jakarta, including hotels, offices, and premium apartments.</p>
+<p>What we offer includes:</p>
+<ul>
+<li>On-site medical personnel tailored to your needs (doctor and/or nurse)</li>
+<li>Medications sourced from our primary clinic in Sunter</li>
+<li>Electronic medical records & monthly visit reports</li>
+<li>Flexible retainer fee, adjusted to your scale and operational needs</li>
+</ul>
+<p>We've attached a brief proposal for your initial reference. If you'd like to learn more, we'd be happy to arrange a short discussion at your convenience.</p>
+<p>Thank you for your time and consideration.</p>`
+    }
+  },
+  warm: {
+    id: {
+      subject: "Penawaran Kerja Sama In-House Clinic — OneKlinik",
+      body: `<p>Dear Bapak/Ibu <strong>[Nama Kontak]</strong>,<br><strong>[Jabatan] — [Nama Perusahaan]</strong></p>
+<p>Melanjutkan percakapan kita sebelumnya, berikut kami sampaikan proposal kerja sama layanan <strong>In-House Clinic (IHC)</strong> dari OneKlinik.</p>
+<p>OneKlinik menyediakan layanan klinik permanen yang ditempatkan langsung di lokasi klien — mencakup tenaga medis (dokter dan/atau perawat), peralatan medis, serta obat-obatan yang bersumber dari klinik pratama kami di Sunter. Saat ini kami sudah melayani enam lokasi aktif di Jakarta, termasuk hotel, kantor, dan hunian premium.</p>
+<p>Model kerja sama kami berbasis <strong>retainer bulanan</strong> — yang kami sesuaikan dengan kebutuhan spesifik setiap klien, antara lain:</p>
+<ul>
+<li>Jumlah dan komposisi tenaga medis yang dibutuhkan</li>
+<li>Jam operasional klinik</li>
+<li>Fasilitas ruangan dan peralatan yang tersedia</li>
+<li>Estimasi jumlah pengguna/karyawan/tamu per bulan</li>
+</ul>
+<p>Selain biaya retainer, klien hanya membayar layanan kesehatan yang benar-benar digunakan (konsultasi, obat, dan prosedur medis sesuai kebutuhan).</p>
+<p>Kami telah melampirkan proposal singkat untuk gambaran awal. Untuk mendiskusikan kebutuhan spesifik <strong>[Nama Perusahaan]</strong> dan mendapatkan penawaran yang lebih terperinci, kami sangat terbuka untuk menjadwalkan pertemuan singkat di waktu yang paling nyaman bagi Bapak/Ibu.</p>
+<p>Terima kasih atas perhatiannya. Kami menantikan kesempatan untuk bekerja sama.</p>`
+    },
+    en: {
+      subject: "In-House Clinic Partnership Proposal — OneKlinik",
+      body: `<p>Dear <strong>[Contact Name]</strong>,<br><strong>[Title] — [Company Name]</strong></p>
+<p>Further to our previous conversation, please find enclosed our partnership proposal for OneKlinik's <strong>In-House Clinic (IHC)</strong> service.</p>
+<p>OneKlinik provides a permanent on-site clinic solution — including medical personnel (doctor and/or nurse), medical equipment, and medications sourced from our primary clinic in Sunter. We currently serve six active locations across Jakarta, including hotels, offices, and premium residences.</p>
+<p>Our partnership model is based on a <strong>monthly retainer</strong>, tailored to each client's specific needs, including:</p>
+<ul>
+<li>Number and composition of medical personnel required</li>
+<li>Clinic operating hours</li>
+<li>Available room and equipment facilities</li>
+<li>Estimated number of users/employees/guests per month</li>
+</ul>
+<p>Beyond the retainer, clients are only billed for healthcare services actually used — consultations, medications, and medical procedures as needed.</p>
+<p>We have attached a brief proposal for your initial reference. To discuss <strong>[Company Name]</strong>'s specific requirements and receive a more detailed offer, we would be happy to arrange a short meeting at your convenience.</p>
+<p>Thank you for your time and consideration. We look forward to the opportunity to work together.</p>`
+    }
+  }
+};
+
+function render(){
+  const d = T[variant][lang];
+  const varBadge = variant==='cold' ? '<span class="badge badge-cold">Cold Outreach — First Touch</span>' : '<span class="badge badge-warm">Post-Call Follow-Up</span>';
+  document.getElementById('tpl-wrap').innerHTML = `<div class="card">
+    <div class="badge-row">${varBadge}<span class="badge badge-email">Email</span></div>
+    <div class="meta-box">
+      <div class="meta-row"><span class="meta-lbl">Subject</span><span class="meta-subject">${d.subject}</span></div>
+      <div class="meta-row"><span class="meta-lbl">To</span><span>[Nama Kontak] &lt;[email@perusahaan.com]&gt;</span></div>
+      <div class="meta-row"><span class="meta-lbl">Cc</span><span>Business Development OneKlinik &lt;busdev@oneklinik.com&gt;</span></div>
+      <div class="meta-row"><span class="meta-lbl">Attach</span><span style="color:#94a3b8">Proposal IHC</span></div>
+    </div>
+    <div class="body-content">${d.body}</div>
+    <div class="sig">Regards,<br><span class="name">[Nama BD]</span><br>Business Development<br><span class="brand">OneKlinik</span><br><span class="contact">busdev@oneklinik.com &nbsp;|&nbsp; +62 813 8712 1503</span></div>
+  </div>`;
+}
+
+function setVar(v,btn){ variant=v; document.querySelectorAll('.var-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); render(); }
+function setLang(l,btn){ lang=l; document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); render(); }
+
+render();
+</script>
+</body>
+</html>
