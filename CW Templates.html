@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CW Outreach Templates — HR, Insurance & Broker | OneKlinik</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #34b6f8;
+    --charcoal: #545454;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --meta-bg: #f0f4f8;
+    --border: #e2e8f0;
+    --text-primary: #1a202c;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Georgia', 'Times New Roman', serif;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+  }
+  body { font-family: var(--font-ui); background: var(--bg); min-height: 100vh; padding: 2rem 1rem 4rem; color: var(--text-primary); }
+  .page-wrap { max-width: 780px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon { width: 30px; height: 30px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 700; }
+  .logo-text { font-size: 19px; font-weight: 700; color: var(--charcoal); }
+  .logo-text span { color: var(--blue); }
+  .header-badge { background: #e8f7fe; color: #0c447c; border: 1px solid #b5d4f4; font-size: 11px; font-weight: 600; padding: 4px 13px; border-radius: 20px; }
+  .controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+  .ctrl-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .ctrl-label { font-size: 12px; color: var(--text-muted); min-width: 60px; }
+  .seg-btn, .ch-btn, .lang-btn { cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text-secondary); font-size: 13px; font-weight: 500; border-radius: 20px; padding: 6px 16px; transition: all 0.15s; font-family: var(--font-ui); }
+  .seg-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+  .ch-btn.active { background: #1a202c; color: white; border-color: #1a202c; }
+  .lang-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 2.5rem; font-size: 14.5px; line-height: 1.8; color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .badge-row { margin-bottom: 1.25rem; display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
+  .badge-hr { background: #e8f7fe; color: #0c447c; border: 1px solid #b5d4f4; }
+  .badge-ins { background: #eaf3de; color: #27500a; border: 1px solid #c0dd97; }
+  .badge-broker { background: #fbeaf0; color: #72243e; border: 1px solid #ed93b1; }
+  .badge-email { background: #fff7ed; color: #633806; border: 1px solid #fac775; }
+  .badge-li { background: #eeedfe; color: #3c3489; border: 1px solid #afa9ec; }
+  .badge-wa { background: #e1f5ee; color: #085041; border: 1px solid #5dcaa5; }
+  .meta-box { background: var(--meta-bg); border-radius: var(--radius-md); padding: 0.9rem 1.1rem; margin-bottom: 1.5rem; font-size: 12.5px; border: 1px solid var(--border); }
+  .meta-row { display: flex; gap: 8px; padding: 2.5px 0; }
+  .meta-lbl { min-width: 52px; color: var(--text-muted); font-size: 11.5px; padding-top: 1px; }
+  .meta-subject { color: var(--blue); font-weight: 600; }
+  .body-content p { margin: 0 0 0.9rem; font-family: var(--font-body); font-size: 14.5px; line-height: 1.8; }
+  .body-content ul { margin: 0.4rem 0 0.9rem 1.35rem; }
+  .body-content ul li { margin-bottom: 0.35rem; font-family: var(--font-body); font-size: 14.5px; }
+  .sig { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem; font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .sig .name { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-top: 4px; }
+  .sig .brand { color: var(--blue); font-weight: 600; }
+  .sig .contact { color: var(--text-muted); font-size: 12px; margin-top: 3px; }
+  .ch-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; padding: 8px 12px; background: var(--meta-bg); border-radius: var(--radius-md); border: 1px solid var(--border); }
+  .li-box { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; }
+  .wa-bg { background: #f0f4f8; border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 0.5rem; }
+  .wa-bubble { background: white; border-radius: 14px 14px 14px 3px; padding: 1rem 1.25rem; font-size: 14.5px; line-height: 1.75; max-width: 88%; border: 1px solid var(--border); white-space: pre-line; }
+  .note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 1rem; }
+  @media (max-width: 580px) { .card { padding: 1.25rem 1rem; } }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="logo">
+      <div class="logo-icon">+</div>
+      <div class="logo-text">One<span>Klinik</span></div>
+    </div>
+    <span class="header-badge">CW Outreach Templates — HR, Insurance & Broker</span>
+  </header>
+
+  <div class="controls">
+    <div class="ctrl-row">
+      <span class="ctrl-label">Segmen</span>
+      <button class="seg-btn active" onclick="setSeg('hr',this)">HR / People Manager</button>
+      <button class="seg-btn" onclick="setSeg('ins',this)">Insurance</button>
+      <button class="seg-btn" onclick="setSeg('broker',this)">Broker</button>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label">Channel</span>
+      <button class="ch-btn active" onclick="setCh('email',this)">Email</button>
+      <button class="ch-btn" onclick="setCh('li',this)">LinkedIn DM</button>
+      <button class="ch-btn" onclick="setCh('wa',this)">WhatsApp</button>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label">Bahasa</span>
+      <button class="lang-btn active" onclick="setLang('id',this)">🇮🇩 Indonesia</button>
+      <button class="lang-btn" onclick="setLang('en',this)">🇬🇧 English</button>
+    </div>
+  </div>
+
+  <div id="tpl-wrap"></div>
+  <p class="note">* Teks dalam [kurung kotak] adalah placeholder yang perlu disesuaikan per lead.</p>
+</div>
+
+<script>
+let seg='hr', ch='email', lang='id';
+
+const T = {
+  hr: {
+    email: {
+      id: {
+        subject: "Program Kesehatan Karyawan untuk [Nama Perusahaan] — OneKlinik",
+        body: `<p>Dear Bapak/Ibu <strong>[Nama Kontak]</strong>,<br><strong>[Jabatan] — [Nama Perusahaan]</strong></p>
+<p>Perkenalkan, saya <strong>[Nama BD]</strong> dari <strong>OneKlinik</strong> — layanan kesehatan B2B berbasis Jakarta yang menyediakan program Corporate Wellness untuk perusahaan mid-large.</p>
+<p>Saya menghubungi Bapak/Ibu karena <strong>[Nama Perusahaan]</strong> adalah perusahaan dengan tim yang cukup besar, dan kami percaya bahwa investasi pada kesehatan karyawan adalah salah satu cara paling efektif untuk menjaga produktivitas dan mengurangi absensi jangka panjang.</p>
+<p>OneKlinik menyediakan program wellness yang bisa disesuaikan secara modular, mencakup:</p>
+<ul>
+<li>Medical Check-Up (paket Silver s/d Platinum, mulai IDR 425.000/orang)</li>
+<li>Vaksinasi — influenza, hepatitis B, dengue, HPV, pneumococcal</li>
+<li>Wellness education session — health talk, nutrition talk, psikologi (45 menit)</li>
+<li>Konsultasi gizi, vitamin infus, dan layanan preventif lainnya</li>
+</ul>
+<p>Program dapat dilaksanakan on-site di lokasi perusahaan maupun di klinik kami. Kami melampirkan proposal dan menu lengkap layanan CW sebagai referensi awal.</p>
+<p>Apakah ada program kesehatan karyawan yang sedang Bapak/Ibu pertimbangkan untuk tahun ini? Kami senang untuk berdiskusi lebih lanjut di waktu yang paling nyaman.</p>`
+      },
+      en: {
+        subject: "Employee Wellness Program for [Company Name] — OneKlinik",
+        body: `<p>Dear <strong>[Contact Name]</strong>,<br><strong>[Title] — [Company Name]</strong></p>
+<p>My name is <strong>[BD Name]</strong> from <strong>OneKlinik</strong> — a Jakarta-based B2B healthcare provider offering Corporate Wellness programs for mid-to-large companies.</p>
+<p>I'm reaching out because <strong>[Company Name]</strong> has a sizeable team, and we believe investing in employee health is one of the most effective ways to sustain productivity and reduce long-term absenteeism.</p>
+<p>OneKlinik offers a modular wellness program that can be tailored to your needs, including:</p>
+<ul>
+<li>Medical Check-Up (Silver to Platinum packages, from IDR 425,000/person)</li>
+<li>Vaccination — influenza, hepatitis B, dengue, HPV, pneumococcal</li>
+<li>Wellness education sessions — health talk, nutrition talk, psychology (45 min)</li>
+<li>Nutrition consultation, IV vitamins, and other preventive services</li>
+</ul>
+<p>Programs can be conducted on-site at your office or at our clinic. We've attached our proposal and full CW service menu for your initial reference.</p>
+<p>Is there an employee wellness program your team is currently considering for this year? We'd love to connect at a time that works for you.</p>`
+      }
+    },
+    li: {
+      id: { body: `<p>Halo Bapak/Ibu <strong>[Nama Kontak]</strong>,</p><p>Saya <strong>[Nama BD]</strong> dari OneKlinik — kami menyediakan program Corporate Wellness modular untuk perusahaan di Jakarta, mulai dari Medical Check-Up, vaksinasi, hingga wellness education session.</p><p>Tertarik untuk tahu lebih lanjut apakah program kami relevan dengan kebutuhan tim HR <strong>[Nama Perusahaan]</strong> tahun ini? Senang sekali kalau bisa berdiskusi singkat.</p>` },
+      en: { body: `<p>Hi <strong>[Contact Name]</strong>,</p><p>I'm <strong>[BD Name]</strong> from OneKlinik — we provide modular Corporate Wellness programs for companies in Jakarta, covering Medical Check-Up, vaccination, and wellness education sessions.</p><p>Would you be open to a quick chat to see if our programs could be relevant to <strong>[Company Name]</strong>'s employee wellness plans this year?</p>` }
+    },
+    wa: {
+      id: { body: `Halo Bapak/Ibu [Nama Kontak], perkenalkan saya [Nama BD] dari OneKlinik.\n\nKami menyediakan program Corporate Wellness untuk perusahaan di Jakarta — mulai dari MCU, vaksinasi, hingga health talk on-site.\n\nBoleh saya share informasi singkat mengenai program kami? Kalau ada waktu, senang sekali bisa diskusi lebih lanjut 🙏` },
+      en: { body: `Hi [Contact Name], I'm [BD Name] from OneKlinik.\n\nWe provide Corporate Wellness programs for companies in Jakarta — covering MCU packages, vaccination, and on-site health talks.\n\nWould it be okay if I shared a brief overview of our programs? Happy to connect at your convenience 🙏` }
+    }
+  },
+  ins: {
+    email: {
+      id: {
+        subject: "Kemitraan Preventive Care untuk Portofolio Korporat — OneKlinik",
+        body: `<p>Dear Bapak/Ibu <strong>[Nama Kontak]</strong>,<br><strong>[Jabatan] — [Nama Perusahaan Asuransi]</strong></p>
+<p>Perkenalkan, saya <strong>[Nama BD]</strong> dari <strong>OneKlinik</strong> — layanan kesehatan B2B di Jakarta yang fokus pada preventive care untuk karyawan perusahaan korporat.</p>
+<p>Kami melihat ada peluang kemitraan yang relevan dengan <strong>[Nama Perusahaan Asuransi]</strong>: OneKlinik dapat menjadi partner preventive care yang membantu mengurangi frekuensi klaim melalui program kesehatan berkala untuk nasabah korporat Bapak/Ibu.</p>
+<p>Program yang kami tawarkan mencakup:</p>
+<ul>
+<li>Medical Check-Up berkala (paket Silver s/d Platinum, mulai IDR 425.000/orang)</li>
+<li>Vaksinasi korporat — influenza, hepatitis B, dengue, HPV</li>
+<li>Wellness education session — health talk, nutrition, psikologi</li>
+<li>Screening ringan dan konsultasi preventif</li>
+</ul>
+<p>Program preventif yang terstruktur berpotensi menurunkan frekuensi klaim rawat jalan dan rawat inap dari nasabah korporat secara bertahap — yang pada akhirnya berdampak pada loss ratio portofolio Bapak/Ibu.</p>
+<p>Kami melampirkan proposal dan menu layanan lengkap sebagai referensi. Apakah ada waktu untuk berdiskusi lebih lanjut mengenai kemungkinan kemitraan ini?</p>`
+      },
+      en: {
+        subject: "Preventive Care Partnership for Your Corporate Portfolio — OneKlinik",
+        body: `<p>Dear <strong>[Contact Name]</strong>,<br><strong>[Title] — [Insurance Company Name]</strong></p>
+<p>My name is <strong>[BD Name]</strong> from <strong>OneKlinik</strong> — a Jakarta-based B2B healthcare provider focused on preventive care for corporate employees.</p>
+<p>We see a relevant partnership opportunity with <strong>[Insurance Company Name]</strong>: OneKlinik can serve as a preventive care partner, helping reduce claim frequency through structured health programs for your corporate policyholders.</p>
+<p>Our programs include:</p>
+<ul>
+<li>Periodic Medical Check-Up (Silver to Platinum, from IDR 425,000/person)</li>
+<li>Corporate vaccination — influenza, hepatitis B, dengue, HPV</li>
+<li>Wellness education sessions — health talk, nutrition, psychology</li>
+<li>Light screening and preventive consultations</li>
+</ul>
+<p>A structured preventive program has the potential to gradually reduce outpatient and inpatient claim frequency from corporate policyholders — ultimately improving your portfolio's loss ratio.</p>
+<p>We've attached our proposal and full service menu for reference. Would you be open to discussing the potential for a partnership?</p>`
+      }
+    },
+    li: {
+      id: { body: `<p>Halo Bapak/Ibu <strong>[Nama Kontak]</strong>,</p><p>Saya <strong>[Nama BD]</strong> dari OneKlinik — kami fokus pada program preventive care korporat di Jakarta, mulai dari MCU berkala, vaksinasi, hingga wellness education.</p><p>Kami percaya ada peluang kemitraan yang menarik dengan <strong>[Nama Perusahaan Asuransi]</strong> — program preventif yang terstruktur berpotensi membantu menurunkan frekuensi klaim dari nasabah korporat Bapak/Ibu.</p><p>Apakah ada waktu untuk diskusi singkat?</p>` },
+      en: { body: `<p>Hi <strong>[Contact Name]</strong>,</p><p>I'm <strong>[BD Name]</strong> from OneKlinik — we focus on corporate preventive care programs in Jakarta, including periodic MCU, vaccination, and wellness education.</p><p>We see a potential partnership opportunity with <strong>[Insurance Company Name]</strong> — structured preventive programs can help reduce claim frequency from your corporate policyholders.</p><p>Would you be open to a brief conversation?</p>` }
+    },
+    wa: {
+      id: { body: `Halo Bapak/Ibu [Nama Kontak], perkenalkan saya [Nama BD] dari OneKlinik.\n\nKami menyediakan program preventive care korporat di Jakarta — MCU, vaksinasi, dan wellness session. Kami melihat ada peluang kemitraan yang relevan dengan [Nama Perusahaan Asuransi] untuk membantu menurunkan frekuensi klaim nasabah korporat.\n\nBoleh saya share informasi lebih lanjut? 🙏` },
+      en: { body: `Hi [Contact Name], I'm [BD Name] from OneKlinik.\n\nWe provide corporate preventive care programs in Jakarta — MCU, vaccination, and wellness sessions. We see a relevant partnership opportunity with [Insurance Company Name] to help reduce claim frequency among your corporate policyholders.\n\nMay I share more details? 🙏` }
+    }
+  },
+  broker: {
+    email: {
+      id: {
+        subject: "Peluang Kerja Sama Distribusi Program Wellness Korporat — OneKlinik",
+        body: `<p>Dear Bapak/Ibu <strong>[Nama Kontak]</strong>,<br><strong>[Jabatan] — [Nama Perusahaan Broker]</strong></p>
+<p>Perkenalkan, saya <strong>[Nama BD]</strong> dari <strong>OneKlinik</strong> — layanan kesehatan B2B berbasis Jakarta yang menyediakan program Corporate Wellness modular untuk perusahaan korporat.</p>
+<p>Saya menghubungi Bapak/Ibu karena kami melihat potensi kerja sama yang relevan dengan <strong>[Nama Perusahaan Broker]</strong> sebagai mitra distribusi: program wellness OneKlinik dapat menjadi nilai tambah yang ditawarkan kepada klien-klien korporat dalam portofolio Bapak/Ibu.</p>
+<p>Program kami mencakup:</p>
+<ul>
+<li>Medical Check-Up (paket Silver s/d Platinum, mulai IDR 425.000/orang)</li>
+<li>Vaksinasi korporat — influenza, hepatitis B, dengue, HPV</li>
+<li>Wellness education session — health talk, nutrition talk, psikologi (45 menit)</li>
+<li>Konsultasi gizi, vitamin infus, dan layanan preventif lainnya</li>
+</ul>
+<p>Kami juga menyediakan skema referral fee yang kompetitif untuk mitra broker. Detail dapat kami diskusikan lebih lanjut.</p>
+<p>Kami melampirkan proposal dan menu layanan lengkap sebagai referensi awal. Apakah ada waktu untuk berdiskusi singkat mengenai kemungkinan kerja sama ini?</p>`
+      },
+      en: {
+        subject: "Partnership Opportunity — Corporate Wellness Distribution | OneKlinik",
+        body: `<p>Dear <strong>[Contact Name]</strong>,<br><strong>[Title] — [Broker Company Name]</strong></p>
+<p>My name is <strong>[BD Name]</strong> from <strong>OneKlinik</strong> — a Jakarta-based B2B healthcare provider offering modular Corporate Wellness programs for corporate clients.</p>
+<p>I'm reaching out because we see a relevant partnership opportunity with <strong>[Broker Company Name]</strong> as a distribution partner: OneKlinik's wellness programs can serve as an added-value offering for the corporate clients in your portfolio.</p>
+<p>Our programs include:</p>
+<ul>
+<li>Medical Check-Up (Silver to Platinum packages, from IDR 425,000/person)</li>
+<li>Corporate vaccination — influenza, hepatitis B, dengue, HPV</li>
+<li>Wellness education sessions — health talk, nutrition talk, psychology (45 min)</li>
+<li>Nutrition consultation, IV vitamins, and other preventive services</li>
+</ul>
+<p>We also offer a competitive referral fee scheme for broker partners. Details can be discussed further.</p>
+<p>We've attached our proposal and full service menu for your initial reference. Would you be open to a brief discussion about this potential partnership?</p>`
+      }
+    },
+    li: {
+      id: { body: `<p>Halo Bapak/Ibu <strong>[Nama Kontak]</strong>,</p><p>Saya <strong>[Nama BD]</strong> dari OneKlinik — kami menyediakan program Corporate Wellness modular untuk perusahaan korporat di Jakarta, mulai dari MCU, vaksinasi, hingga wellness education session.</p><p>Kami melihat ada peluang kerja sama yang menarik dengan <strong>[Nama Perusahaan Broker]</strong> sebagai mitra distribusi — termasuk skema referral fee yang kompetitif untuk mitra kami.</p><p>Apakah ada waktu untuk diskusi singkat?</p>` },
+      en: { body: `<p>Hi <strong>[Contact Name]</strong>,</p><p>I'm <strong>[BD Name]</strong> from OneKlinik — we provide modular Corporate Wellness programs for corporate companies in Jakarta, covering MCU, vaccination, and wellness education sessions.</p><p>We see a relevant distribution partnership opportunity with <strong>[Broker Company Name]</strong> — including a competitive referral fee scheme for our partners.</p><p>Would you be open to a quick chat?</p>` }
+    },
+    wa: {
+      id: { body: `Halo Bapak/Ibu [Nama Kontak], perkenalkan saya [Nama BD] dari OneKlinik.\n\nKami menyediakan program Corporate Wellness modular untuk perusahaan di Jakarta — MCU, vaksinasi, health talk, dan lainnya.\n\nKami melihat ada peluang kerja sama yang relevan dengan [Nama Perusahaan Broker], termasuk skema referral fee untuk mitra kami. Boleh saya share informasi lebih lanjut? 🙏` },
+      en: { body: `Hi [Contact Name], I'm [BD Name] from OneKlinik.\n\nWe provide modular Corporate Wellness programs for companies in Jakarta — MCU, vaccination, health talks, and more.\n\nWe see a relevant partnership opportunity with [Broker Company Name], including a referral fee scheme for our partners. May I share more details? 🙏` }
+    }
+  }
+};
+
+function segBadgeHTML(s){
+  if(s==='hr') return '<span class="badge badge-hr">HR / People Manager</span>';
+  if(s==='ins') return '<span class="badge badge-ins">Insurance — Partnership</span>';
+  return '<span class="badge badge-broker">Broker — Distribution</span>';
+}
+function chBadgeHTML(c){
+  if(c==='email') return '<span class="badge badge-email">Cold Email</span>';
+  if(c==='li') return '<span class="badge badge-li">LinkedIn DM</span>';
+  return '<span class="badge badge-wa">WhatsApp</span>';
+}
+
+function render(){
+  const d = T[seg][ch][lang];
+  const wrap = document.getElementById('tpl-wrap');
+  const sb = segBadgeHTML(seg);
+  const cb = chBadgeHTML(ch);
+  if(ch==='email'){
+    wrap.innerHTML = `<div class="card">
+      <div class="badge-row">${sb}${cb}</div>
+      <div class="meta-box">
+        <div class="meta-row"><span class="meta-lbl">Subject</span><span class="meta-subject">${d.subject}</span></div>
+        <div class="meta-row"><span class="meta-lbl">To</span><span>[Nama Kontak] &lt;[email@perusahaan.com]&gt;</span></div>
+        <div class="meta-row"><span class="meta-lbl">Cc</span><span>Business Development OneKlinik &lt;busdev@oneklinik.com&gt;</span></div>
+        <div class="meta-row"><span class="meta-lbl">Attach</span><span style="color:var(--text-muted)">Proposal CW + Wellness Program Menu</span></div>
+      </div>
+      <div class="body-content">${d.body}</div>
+      <div class="sig">Regards,<br><span class="name">[Nama BD]</span><br>Business Development<br><span class="brand">OneKlinik</span><br><span class="contact">busdev@oneklinik.com &nbsp;|&nbsp; +62 813 8712 1503</span></div>
+    </div>`;
+  } else if(ch==='li'){
+    wrap.innerHTML = `<div class="card">
+      <div class="badge-row">${sb}${cb}</div>
+      <p class="ch-note">Kirim sebagai LinkedIn Direct Message — tidak ada attachment, tone lebih conversational.</p>
+      <div class="li-box body-content">${d.body}</div>
+      <div class="sig" style="margin-top:1rem;">— <span class="name" style="display:inline">[Nama BD]</span>, Business Development · <span class="brand">OneKlinik</span></div>
+    </div>`;
+  } else {
+    wrap.innerHTML = `<div class="card">
+      <div class="badge-row">${sb}${cb}</div>
+      <p class="ch-note">Kirim sebagai pesan WhatsApp pertama — singkat, casual, soft CTA.</p>
+      <div class="wa-bg"><div class="wa-bubble">${d.body}</div></div>
+      <div class="sig" style="margin-top:0.5rem;">— <span class="name" style="display:inline">[Nama BD]</span> · <span class="brand">OneKlinik</span> · +62 813 8712 1503</div>
+    </div>`;
+  }
+}
+
+function setSeg(s,btn){ seg=s; document.querySelectorAll('.seg-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); render(); }
+function setCh(c,btn){ ch=c; document.querySelectorAll('.ch-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); render(); }
+function setLang(l,btn){ lang=l; document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); render(); }
+
+render();
+</script>
+</body>
+</html>
